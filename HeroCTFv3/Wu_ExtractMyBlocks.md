@@ -25,7 +25,7 @@ So know we can start the attack, we have to send a specific amount of char to se
 
 14 bytes for "\n Welcome back" 
 20 bytes for " ! \n \nYour password : "
-And our payload, this all make 3 blocks of 48 bytes, so our payload might be 14 bytes long
+And our payload, all make 3 blocks of 48 bytes, so our payload might be 14 bytes long
 ```
 <br>
 The attack is based on extract the chars of the flag one by one. The tricks is : if we build a payload that is 13 bytes long instead of 14, there is 1 byte left, and it's a flag byte !
@@ -45,7 +45,7 @@ def get_block(token):
 block_size = 32
 auth_length = 129
 """
-The payload, why it looks like this, because I take the 13th chars before the flag, is "our password : ",  but it has to be in the same block, but the previous block is 14 bytes long, so i add 2 random char before.
+The payload, why it looks like this ?  Because I take the 13th chars before the flag, it's "our password : ",  but it has to be in the same block, but the previous block is 14 bytes long, so I add 2 random char before.
 """
 line = ['z','a','o','u','r',' ','p','a','s','s','w','o','r','d',' ',':',' ']
 flag = []
@@ -61,10 +61,11 @@ def get_the_flag() :
         t = r.recv().decode()
         r.sendline("A"*(offset))
         t = r.recv().decode()
+        #The block with has the 1st flag's byte 
         block_sould_be = get_block(t)[2]
 
         """
-        Here i test every printable char and check if the block I get is equals to the "should_be_block".
+        Here I test every printable char and check if the block I get is equals to the "should_be_block".
         """
         for c in printable:
             r = remote("chall0.heroctf.fr",10000)
