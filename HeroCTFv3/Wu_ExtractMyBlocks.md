@@ -1,7 +1,7 @@
 # W-u of ExtractMyBlocks
 ![](ExtractMyBlocks.png)<br>
 ## Block make us think about AES ! 
-So when we chack the given script, we can see that is actually AES - ECB<br>
+So when we check the given script, we can see that is actually AES - ECB<br>
 When we sent a random text in the Account Id field it returns back : <br>
 ```
 Welcome back {account_id} !
@@ -15,7 +15,7 @@ Encrypted in AES, that looks like :
 
 ![](TestNC.png)<br>
 
-### We know that the block size is 32 hex char. So we can cut the request in blocks like this : <br>
+### We know that the block's size is 32 hex char. So we can cut the request in blocks like this : <br>
 ![](Blocks.png)<br>
 
 So know we can start the attack, we have to send a specific amount of char to see when a new block is created. I counted the bytes in the previous message and I found :
@@ -28,7 +28,7 @@ So know we can start the attack, we have to send a specific amount of char to se
 And our payload, all make 3 blocks of 48 bytes, so our payload might be 14 bytes long
 ```
 <br>
-The attack is based on extract the chars of the flag one by one. The tricks is : if we build a payload that is 13 bytes long instead of 14, there is 1 byte left, and it's a flag byte !
+The attack is based on extract the chars of the flag one by one. The trick is : if we build a payload that is 13 bytes long instead of 14, there is 1 byte left, and it's a flag byte !
 Here is my script :<br>
 
 ```python
