@@ -1,4 +1,4 @@
-# W-u for ExtractMyBlocks
+# W-u of ExtractMyBlocks
 ![](ExtractMyBlocks.png)<br>
 ## Block make us think about AES ! 
 So when we chack the given script, we can see that is actually AES - ECB<br>
