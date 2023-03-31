@@ -68,7 +68,6 @@ flag.**𝗀𝗅𝗈𝖻𝖺𝗅𝗌**['**buil'+'tins**'].print(flag.**𝗀𝗅�
 
 And the flag apprears :
 
-![Untitled](images
-/Untitled.png)
+![Untitled](images/Untitled.png)
 
 Flag : Hero{pyth0n_4ss3mbly}
